@@ -31,7 +31,7 @@ public:
         }    
     }
     void swap(shared_ptr & other){
-        std::swap (ptr_, *other);
+        std::swap (ptr, other.ptr);
 		std::swap (count, other.count);    
     }
     T * get()const{
@@ -58,7 +58,7 @@ public:
     T * operator->(){
         return * ptr;    
     }
-    T * reset()const{}
-    
-    
+    T * reset(T * newptr=nullptr)const{
+    	shared_ptr(newptr).swap(*this);
+    }
 };
