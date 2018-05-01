@@ -17,9 +17,10 @@ public:
         ptr=oth;
         count=(new size_t=1);
     }
-    shared_ptr(shared_ptr & other){
+    shared_ptr(shared_ptr & other)const{
         ptr=other.ptr;
         count=other.count;
+	++count;
     }
     ~shared_ptr(){
         if (count) {
