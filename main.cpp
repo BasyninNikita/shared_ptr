@@ -50,8 +50,7 @@ public:
                 }
                 else (*count)--;
             }
-            ptr = other.ptr;
-            count = other.count;
+            shared_ptr(&other).swap(*this);
             (*count)++;
         }
         return *this;
