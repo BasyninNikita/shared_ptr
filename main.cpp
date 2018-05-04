@@ -15,9 +15,9 @@ public:
     shared_ptr(T * oth)
     {
         ptr=oth;
-        count=(new size_t=1);
+        count=new size_t(1);
     }
-    shared_ptr(shared_ptr & other)const{
+    shared_ptr(const shared_ptr & other)const{
         ptr=other.ptr;
         count=other.count;
 	++count;
